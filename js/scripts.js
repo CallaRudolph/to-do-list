@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     var newTask = new Task(inputtedTask, inputtedDescript);
 
-    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span></li>" + "<input type='checkbox' name='done value='done'>");
+    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span></li>" + "<input type='checkbox' name='done' value='done'>");
 
     $(".list").last().click(function() {
       $("#show-doList").show();
@@ -28,5 +28,13 @@ $(document).ready(function() {
 
     $("input#new-task").val("");
     $("input#new-descript").val("");
+
+    $("#show-doneList").show();
+    $("input:checkbox[name=done]:checked").each(function() {
+      var checkbox = $(this).val();
+      $('#show-doneList').append("<li><span class='listed'>" + newTask.taskAddition() + "</span></li>");
+      $(".task").text(newTask.task);
+      $(".details").hide(newTask.descriptor);
+    });
   });
 });

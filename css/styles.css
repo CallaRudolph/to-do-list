@@ -2,6 +2,10 @@
   display: none;
 }
 
+#show-doneList {
+  display: none;
+}
+
 .list {
   cursor: pointer;
   color: #0088cc;
@@ -11,8 +15,11 @@
   text-decoration: underline;
 }
 
-.jumbrtron {
+.jumbotron {
   background-image: url("img/list.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+ h1 {
+   text-shadow: rgb(89, 244, 66) 3px 3px;
+ }
