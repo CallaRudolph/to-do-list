@@ -1,0 +1,12 @@
+#show-doList {
+  display: none;
+}
+
+.list {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.list:hover {
+  text-decoration: underline;
+}
