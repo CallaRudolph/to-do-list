@@ -6,9 +6,7 @@ function Task(task, descriptor) {
     return this.task + " " + this.descriptor;
   }
 
-  // Task.prototype.taskAddition1 = function() {
-  //   return this.descriptor;
-  // }
+
 /////////
 $(document).ready(function() {
   $("form#toDo").submit(function(event) {
@@ -21,27 +19,14 @@ $(document).ready(function() {
 
     $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</li></span>");
 
-    // $(".details").hide();
-    // $(".list").last().click(function() {
-    //   $("#show-doList").show();
-    //   $("#show-doList h2").text(newTask.task);
-    //   $(".task").text(newTask.task);
-      // $(".details").show();
-      // $(".details").text(newTask.descriptor);
-    // });
-
     $("input#new-task").val("");
     $("input#new-descript").val("");
-
 
     $(".list").last().click(function() {
       $("ul#show-doneList").append("<li>" + newTask.taskAddition() + "</li>");
       $("#show-doneList").show();
       $("#show-doneList h4").show();
       $(this).fadeOut();
-      // $("<li>" + this + "</li>").empty();
-      // $(".task").text(newTask.task);
-
 
     });
   });
