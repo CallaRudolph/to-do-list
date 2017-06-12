@@ -20,6 +20,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
  h1 {
    text-shadow: rgb(89, 244, 66) 3px 3px;
  }
+
+/*input [type="checkbox"]:checked {
+  display: none;
+}*/

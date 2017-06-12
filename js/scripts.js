@@ -6,7 +6,9 @@ function Task(task, descriptor) {
     return this.task;
   }
 
-
+  Task.prototype.taskAddition1 = function() {
+    return this.descriptor;
+  }
 /////////
 $(document).ready(function() {
   $("form#toDo").submit(function(event) {
@@ -17,24 +19,27 @@ $(document).ready(function() {
 
     var newTask = new Task(inputtedTask, inputtedDescript);
 
-    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span></li>" + "<input type='checkbox' name='done' value='done'>");
+    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span> details: " + "<span class='details'>" + newTask.taskAddition1() + "</li></span>");
 
+    $(".details").hide();
     $(".list").last().click(function() {
       $("#show-doList").show();
       $("#show-doList h2").text(newTask.task);
       $(".task").text(newTask.task);
-      $(".details").text(newTask.descriptor);
+      $(".details").show();
+      // $(".details").text(newTask.descriptor);
     });
 
     $("input#new-task").val("");
     $("input#new-descript").val("");
 
-    $("#show-doneList").show();
-    $("input:checkbox[name=done]:checked").each(function() {
-      var checkbox = $(this).val();
-      $('#show-doneList').append("<li><span class='listed'>" + newTask.taskAddition() + "</span></li>");
-      $(".task").text(newTask.task);
-      $(".details").hide(newTask.descriptor);
-    });
+    // $("input:checkbox[name=done]:checked").each(function() {
+    //   $("#show-doneList").show();
+    //   var checkbox = $(this).val();
+    //   $('#show-doneList').append("<li><span class='listed'>" + newTask.taskAddition() + "</span></li>");
+    //   $(".task").text(newTask.task);
+    //   $(".details").hide(newTask.descriptor);
+    //   $("#show-doList").hide();
+    // });
   });
 });
