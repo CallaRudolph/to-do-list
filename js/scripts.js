@@ -3,12 +3,12 @@ function Task(task, descriptor) {
   this.descriptor = descriptor;
 }
   Task.prototype.taskAddition = function() {
-    return this.task;
+    return this.task + " " + this.descriptor;
   }
 
-  Task.prototype.taskAddition1 = function() {
-    return this.descriptor;
-  }
+  // Task.prototype.taskAddition1 = function() {
+  //   return this.descriptor;
+  // }
 /////////
 $(document).ready(function() {
   $("form#toDo").submit(function(event) {
@@ -19,27 +19,30 @@ $(document).ready(function() {
 
     var newTask = new Task(inputtedTask, inputtedDescript);
 
-    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span> details: " + "<span class='details'>" + newTask.taskAddition1() + "</li></span>");
+    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</li></span>");
 
-    $(".details").hide();
-    $(".list").last().click(function() {
-      $("#show-doList").show();
-      $("#show-doList h2").text(newTask.task);
-      $(".task").text(newTask.task);
-      $(".details").show();
+    // $(".details").hide();
+    // $(".list").last().click(function() {
+    //   $("#show-doList").show();
+    //   $("#show-doList h2").text(newTask.task);
+    //   $(".task").text(newTask.task);
+      // $(".details").show();
       // $(".details").text(newTask.descriptor);
-    });
+    // });
 
     $("input#new-task").val("");
     $("input#new-descript").val("");
 
-    // $("input:checkbox[name=done]:checked").each(function() {
-    //   $("#show-doneList").show();
-    //   var checkbox = $(this).val();
-    //   $('#show-doneList').append("<li><span class='listed'>" + newTask.taskAddition() + "</span></li>");
-    //   $(".task").text(newTask.task);
-    //   $(".details").hide(newTask.descriptor);
-    //   $("#show-doList").hide();
-    // });
+
+    $(".list").last().click(function() {
+      $("ul#show-doneList").append("<li>" + newTask.taskAddition() + "</li>");
+      $("#show-doneList").show();
+      $("#show-doneList h4").show();
+      $(this).fadeOut();
+      // $("<li>" + this + "</li>").empty();
+      // $(".task").text(newTask.task);
+
+
+    });
   });
 });

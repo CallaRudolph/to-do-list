@@ -25,6 +25,10 @@
    text-shadow: rgb(89, 244, 66) 3px 3px;
  }
 
+ ul
+ {
+ list-style-type: none;
+ }
 /*input [type="checkbox"]:checked {
   display: none;
 }*/
