@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     var newTask = new Task(inputtedTask, inputtedDescript);
 
-    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span></li>");
+    $("ul#doList").append("<li><span class='list'>" + newTask.taskAddition() + "</span></li>" + "<input type='checkbox' name='done value='done'>");
 
     $(".list").last().click(function() {
       $("#show-doList").show();

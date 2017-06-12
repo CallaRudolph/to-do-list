@@ -10,3 +10,9 @@
 .list:hover {
   text-decoration: underline;
 }
+
+.jumbrtron {
+  background-image: url("img/list.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
